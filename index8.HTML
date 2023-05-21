@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Регистрация</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      margin: 120px auto;
+      text-align: center;
+    }
+    
+    h2 {
+      color: #ff0;
+    }
+    
+    input[type="password"] {
+      background-color: #000;
+      border: none;
+      border-bottom: 2px solid #ff0;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 200px;
+    }
+    
+    input[type="submit"] {
+      background-color: #ff0;
+      border: none;
+      color: #000;
+      font-size: 28px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #f90;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Регистрация</h2>
+    <form action="#" method="post" onsubmit="return validatePassword()">
+      <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+      <input type="submit" value="Войти">
+    </form>
+  </div>
+  
+  <script>
+    function validatePassword() {
+      var passwordInput = document.getElementById("password");
+      var enteredPassword = passwordInput.value;
+      
+      var validPasswords = ["12345", "4747", "87654321", "1313"];
+      
+      if (validPasswords.includes(enteredPassword)) {
+        var redirectURL = "file:///C:/Users/PC/Desktop/gh/PHP1.HTML"; // Замените на нужную ссылку
+        window.location.href = redirectURL;
+        return false; // Остановить отправку формы
+      } else {
+        alert("Неверный пароль!");
+        return false; // Остановить отправку формы
+      }
+    }
+  </script>
+</body>
+</html>
